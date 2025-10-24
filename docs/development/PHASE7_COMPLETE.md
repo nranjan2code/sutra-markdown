@@ -87,7 +87,7 @@ enhanced_doc = await reconstructor.reconstruct_text_flow(document, patterns)
 
 ### **Real-World Testing**
 
-**Complex ESG Report (Corporate Sustainability Report)**:
+**Complex Report (Corporate Report)**:
 - **Pages**: 121 pages
 - **Quality Score**: **100.0/100** ✅
 - **Strategy**: `adaptive_structured`
@@ -97,7 +97,7 @@ enhanced_doc = await reconstructor.reconstruct_text_flow(document, patterns)
 - **Pattern Discovery**: 5 paragraph marker types found
 - **Text Enhancement**: 322 character improvement (285,715 → 286,037)
 
-**ESG Supplementary Disclosure**:
+** Supplementary Disclosure**:
 - **Pages**: 70 pages  
 - **Quality Score**: **95.0/100** ✅
 - **Strategy**: `adaptive_mixed`
