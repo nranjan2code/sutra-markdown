@@ -1,0 +1,150 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+env/
+ENV/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+
+# Storage
+storage/
+uploads/
+converted/
+temp/
+
+# Cache
+.cache/
+*.cache
+
+# Redis dumps
+dump.rdb
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Documentation build
+docs/_build/
+site/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing artifacts
+.coverage.*
+coverage.xml
+*.cover
+
+# Profiling
+*.prof
+*.lprof
+
+# Data files (exclude large test files and samples)
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+tests/fixtures/*.pdf
+tests/fixtures/*.docx
+
+# But include example files
+!examples/*.pdf
+!examples/*.docx
+
+# Exclude samples directory (contains sensitive/large documents)
+samples/
+samples/*
+
+# Exclude test files we created during development
+test_*.py
+*_test.py
+sutra_quality_test.py
+test_complex_esg.py
+test_tiers.py
+test_wipro_complex.py
+
+# Exclude output directories and converted files
+outputs/
+converted/
+*_converted.md
+*_sutra_converted.md
+
+# Quality reports and test results
+*_quality_report.json
+*_analysis.py
+*_analysis_*.py
+
+# Model weights (if downloaded)
+models/
+weights/
+*.pt
+*.pth
+*.onnx
+
+# Monitoring
+prometheus_data/
+
+# Docker
+docker-compose.override.yml

@@ -1,0 +1,182 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sutra-markdown"
+version = "2.0.0"
+description = "Revolutionary document-to-markdown converter powered by AI embeddings"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [
+    {name = "Sutra Team", email = "dev@sutra-markdown.com"}
+]
+keywords = [
+    "markdown",
+    "document-conversion", 
+    "pdf",
+    "docx",
+    "embeddings",
+    "ai",
+    "nomic",
+    "fastapi"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.27.0",
+    "pydantic>=2.6.0",
+    "pydantic-settings>=2.1.0",
+    "nomic>=3.0.0",
+    "pymupdf>=1.23.21",
+    "python-docx>=1.1.0",
+    "python-pptx>=0.6.23",
+    "pillow>=10.2.0",
+    "redis>=5.0.1",
+    "numpy>=1.26.3",
+    "scikit-learn>=1.4.0",
+    "typer[all]>=0.9.0",
+    "rich>=13.7.0",
+    "aiofiles>=23.2.1",
+    "httpx>=0.26.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.4",
+    "pytest-cov>=4.1.0",
+    "black>=24.1.1",
+    "ruff>=0.2.1",
+    "mypy>=1.8.0",
+    "ipython>=8.20.0",
+]
+llm = [
+    "openai>=1.12.0",
+    "anthropic>=0.18.0",
+    "google-generativeai>=0.3.2",
+    "ollama>=0.1.6",
+]
+ocr = [
+    "pytesseract>=0.3.10",
+    "pdf2image>=1.17.0",
+]
+monitoring = [
+    "prometheus-client>=0.19.0",
+    "opentelemetry-api>=1.22.0",
+    "opentelemetry-sdk>=1.22.0",
+    "structlog>=24.1.0",
+]
+storage = [
+    "boto3>=1.34.34",
+    "minio>=7.2.3",
+]
+docs = [
+    "mkdocs>=1.5.3",
+    "mkdocs-material>=9.5.6",
+    "mkdocstrings[python]>=0.24.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/nranjan2code/sutra-markdown"
+Documentation = "https://docs.sutra-markdown.com"
+Repository = "https://github.com/nranjan2code/sutra-markdown"
+Issues = "https://github.com/nranjan2code/sutra-markdown/issues"
+
+[project.scripts]
+sutra = "sutra.cli:app"
+sutra-serve = "sutra.api.server:serve"
+
+[tool.setuptools]
+packages = ["sutra"]
+
+[tool.black]
+line-length = 100
+target-version = ['py311']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.venv
+  | build
+  | dist
+  | __pycache__
+)/
+'''
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+select = [
+    "E",   # pycodestyle errors
+    "W",   # pycodestyle warnings
+    "F",   # pyflakes
+    "I",   # isort
+    "B",   # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+ignore = [
+    "E501",  # line too long (handled by black)
+    "B008",  # do not perform function calls in argument defaults
+]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_any_generics = true
+check_untyped_defs = true
+no_implicit_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+follow_imports = "normal"
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--cov=sutra",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+]
+asyncio_mode = "auto"
+
+[tool.coverage.run]
+source = ["sutra"]
+omit = [
+    "*/tests/*",
+    "*/test_*.py",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+    "@abstractmethod",
+]

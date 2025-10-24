@@ -1,0 +1,57 @@
+# Sutra-Markdown Production Dependencies - Minimal & Optimized
+# ============================================================================
+# PRODUCTION ONLY - No development tools, testing, or documentation
+# ============================================================================
+
+# Core Framework (Required)
+fastapi==0.110.0
+uvicorn[standard]==0.27.0
+pydantic==2.6.0
+pydantic-settings==2.1.0
+python-multipart==0.0.9
+
+# Async & HTTP
+aiofiles==23.2.1
+httpx>=0.25.2,<0.26.0
+
+# Document Parsing (Core)
+pymupdf==1.23.21  # PDF parsing
+python-docx==1.1.0  # DOCX
+python-pptx==0.6.23  # PPTX
+pillow==10.2.0  # Images
+
+# Embeddings (Production)
+nomic>=3.0.0
+sentence-transformers==2.3.1
+numpy==1.26.3
+scipy==1.12.0
+torch==2.2.0
+transformers==4.37.2
+einops==0.7.0
+
+# Caching & Storage (Production)
+redis==5.0.1
+aioredis==2.0.1
+hiredis==2.3.2
+
+# Data Processing (Minimal)
+pandas==2.2.0
+chardet==5.2.0
+beautifulsoup4==4.12.3
+lxml==5.1.0
+
+# CLI (Production)
+typer[all]==0.9.0
+rich==13.7.0
+
+# Logging (Production)
+structlog==24.1.0
+
+# Utilities (Essential)
+python-dotenv==1.0.1
+pyyaml==6.0.1
+python-dateutil==2.8.2
+xxhash==3.4.1
+
+# Server (Production)
+gunicorn==21.2.0
