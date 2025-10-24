@@ -1,6 +1,6 @@
 # Sutra-Markdown V2.2 🚀
 
-**Production-Grade AI-Powered Document Conversion**
+**"What if embeddings guided the EXTRACTION process itself, not just the routing decisions?"
 
 Transform PDFs, DOCX, PPTX, and images into high-quality Markdown with revolutionary AI intelligence. Built with modern Python best practices, complete type safety, and enterprise-grade security.
 
