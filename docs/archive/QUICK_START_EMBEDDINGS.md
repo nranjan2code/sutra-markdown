@@ -474,13 +474,6 @@ result = await converter.convert("document.pdf")
 
 ---
 
-## 📞 Support
-
-- **Documentation**: See `EMBEDDING_PERFORMANCE_ARCHITECTURE.md`
-- **Benchmarking**: Run `python3 scripts/benchmark_embeddings.py`
-- **Monitoring**: Check `http://localhost:8000/metrics`
-- **Issues**: File GitHub issues with performance details
-
 **🚀 You're now ready for production-scale embedding processing with 10,000+ concurrent requests!**
         "AI assistants are becoming more capable."
     ]

@@ -37,9 +37,9 @@ Check service health and status.
   "status": "healthy",
   "version": "2.1.0",
   "cache_stats": {
-    "total_hits": 1250,
-    "total_requests": 2000,
-    "hit_rate": 0.625
+    "total_hits": 1000,
+    "total_requests": 1500,
+    "hit_rate": 0.667
   }
 }
 ```
@@ -80,37 +80,37 @@ curl -X POST "http://localhost:8000/convert" \
 **Response:**
 ```json
 {
-  "markdown": "# Document Title\n\nContent...",
+  "markdown": "# Sample Document Title\n\nExample content...",
   "outputs": {
-    "json": "{\"document_info\":{\"title\":\"Document Title\",...}}",
-    "xml": "<?xml version=\"1.0\"?><document><title>Document Title</title>...</document>",
-    "yaml": "document_info:\n  title: Document Title\n  pages: 121\n..."
+    "json": "{\"document_info\":{\"title\":\"Sample Document Title\",...}}",
+    "xml": "<?xml version=\"1.0\"?><document><title>Sample Document Title</title>...</document>",
+    "yaml": "document_info:\n  title: Sample Document Title\n  pages: 25\n..."
   },
   "tier": "tier1",
-  "quality_score": 0.975,
-  "processing_time": 3.86,
-  "word_count": 15420,
-  "line_count": 892,
+  "quality_score": 0.95,
+  "processing_time": 2.4,
+  "word_count": 5000,
+  "line_count": 300,
   "cached": false,
   "warnings": [],
   "complexity_analysis": {
-    "score": 0.65,
-    "confidence": 0.92,
-    "reasoning": "Complex document with tables and charts",
+    "score": 0.75,
+    "confidence": 0.88,
+    "reasoning": "Document contains standard structure with moderate complexity",
     "metrics": {
-      "structural_score": 0.7,
-      "semantic_score": 0.8,
-      "visual_score": 0.6,
-      "density_score": 0.5,
-      "special_score": 0.4,
-      "layout_type": "multi_column",
-      "page_count": 121,
-      "table_count": 15,
-      "image_count": 8,
-      "topic_clusters": 12,
-      "embedding_diversity": 0.82,
-      "layout_complexity": 0.65,
-      "visual_diversity": 0.71
+      "structural_score": 0.8,
+      "semantic_score": 0.75,
+      "visual_score": 0.7,
+      "density_score": 0.6,
+      "special_score": 0.5,
+      "layout_type": "standard",
+      "page_count": 25,
+      "table_count": 3,
+      "image_count": 2,
+      "topic_clusters": 5,
+      "embedding_diversity": 0.70,
+      "layout_complexity": 0.55,
+      "visual_diversity": 0.60
     }
   }
 }
@@ -134,7 +134,7 @@ curl -X POST "http://localhost:8000/convert/async" \
 {
   "job_id": "job_abc123",
   "status": "pending",
-  "created_at": "2024-01-15T10:30:00Z",
+  "created_at": "2025-03-15T14:30:00Z",
   "message": "Job submitted successfully"
 }
 ```
@@ -151,11 +151,11 @@ Check status of asynchronous conversion job.
   "job_id": "job_abc123",
   "status": "completed",
   "progress": 1.0,
-  "created_at": "2024-01-15T10:30:00Z",
-  "started_at": "2024-01-15T10:30:02Z",
-  "completed_at": "2024-01-15T10:30:15Z",
+  "created_at": "2025-03-15T14:30:00Z",
+  "started_at": "2025-03-15T14:30:02Z",
+  "completed_at": "2025-03-15T14:30:15Z",
   "result": {
-    "markdown": "# Document content...",
+    "markdown": "# Sample Document Content...",
     "outputs": {
       "json": "{...}",
       "xml": "<?xml...>",
@@ -163,10 +163,10 @@ Check status of asynchronous conversion job.
       "yaml": "document_info:\n..."
     },
     "tier": "tier2",
-    "quality_score": 0.92,
-    "processing_time": 13.2,
-    "word_count": 45000,
-    "line_count": 2500,
+    "quality_score": 0.90,
+    "processing_time": 8.5,
+    "word_count": 12000,
+    "line_count": 800,
     "cached": false,
     "warnings": []
   }
@@ -194,7 +194,7 @@ curl -X POST "http://localhost:8000/convert/batch" \
   "batch_id": "batch_xyz789",
   "status": "processing",
   "total_files": 3,
-  "created_at": "2024-01-15T10:30:00Z",
+  "created_at": "2025-03-15T14:30:00Z",
   "message": "Batch processing started"
 }
 ```
@@ -208,23 +208,23 @@ Get conversion statistics and metrics.
 **Response:**
 ```json
 {
-  "total_conversions": 15420,
-  "cache_hits": 8950,
-  "cache_misses": 6470,
-  "hit_rate": 0.58,
-  "average_processing_time": 2.3,
+  "total_conversions": 10000,
+  "cache_hits": 6000,
+  "cache_misses": 4000,
+  "hit_rate": 0.60,
+  "average_processing_time": 2.5,
   "tier_distribution": {
-    "tier1": 13878,
-    "tier2": 770,
-    "tier3": 772
+    "tier1": 8500,
+    "tier2": 1000,
+    "tier3": 500
   },
   "format_distribution": {
-    "markdown": 15420,
-    "json": 8950,
-    "xml": 4230,
-    "csv": 2110,
-    "yaml": 1890,
-    "html": 950
+    "markdown": 10000,
+    "json": 7500,
+    "xml": 5000,
+    "csv": 2500,
+    "yaml": 2000,
+    "html": 1500
   }
 }
 ```
@@ -261,63 +261,63 @@ When `enable_intelligence=true`, the response includes AI enhancement metadata:
 ```json
 {
   "document_info": {
-    "title": "Sustainability Report FY 2023-24",
-    "total_pages": 121,
-    "processing_time": "3.86s",
-    "quality_score": 100,
-    "enhancement_strategy": "adaptive_structured"
+    "title": "Sample Business Document",
+    "total_pages": 25,
+    "processing_time": "2.4s",
+    "quality_score": 95,
+    "enhancement_strategy": "adaptive_standard"
   },
   "structured_content": {
-    "total_elements": 217,
-    "headings": 95,
-    "paragraphs": 122,
-    "lists": 0,
+    "total_elements": 150,
+    "headings": 45,
+    "paragraphs": 80,
+    "lists": 25,
     "hierarchy": {
-      "h1": 12,
-      "h2": 34,
-      "h3": 49
+      "h1": 5,
+      "h2": 15,
+      "h3": 25
     }
   },
   "semantic_elements": [
     {
       "type": "heading",
       "level": 1,
-      "text": "Executive Summary",
-      "page": 3,
-      "id": "exec-summary"
+      "text": "Introduction",
+      "page": 1,
+      "id": "introduction"
     },
     {
       "type": "paragraph",
-      "text": "We are committed to creating sustainable value...",
-      "page": 3,
-      "word_count": 45
+      "text": "This document provides an overview of the main topics...",
+      "page": 1,
+      "word_count": 32
     },
     {
       "type": "heading",
       "level": 2,
-      "text": "Environmental Performance",
-      "page": 15,
-      "id": "env-performance"
+      "text": "Main Content Section",
+      "page": 8,
+      "id": "main-content"
     }
   ],
   "tables": [
     {
       "id": "table_1",
-      "caption": "Carbon Emissions by Region",
-      "page": 25,
+      "caption": "Sample Data Table",
+      "page": 12,
       "rows": [
-        ["Region", "2023", "2024", "Change"],
-        ["North America", "1250", "1180", "-5.6%"],
-        ["Europe", "890", "850", "-4.5%"]
+        ["Category", "Value A", "Value B", "Total"],
+        ["Item 1", "100", "150", "250"],
+        ["Item 2", "200", "175", "375"]
       ]
     }
   ],
   "images": [
     {
       "id": "img_1",
-      "caption": "Renewable Energy Growth",
-      "page": 32,
-      "type": "chart"
+      "caption": "Example Chart",
+      "page": 18,
+      "type": "diagram"
     }
   ]
 }
@@ -329,32 +329,32 @@ When `enable_intelligence=true`, the response includes AI enhancement metadata:
 <?xml version="1.0" encoding="UTF-8"?>
 <document>
   <metadata>
-    <title>Sustainability Report FY 2023-24</title>
-    <pages>121</pages>
-    <processing_time>3.86s</processing_time>
-    <quality_score>100</quality_score>
+    <title>Sample Business Document</title>
+    <pages>25</pages>
+    <processing_time>2.4s</processing_time>
+    <quality_score>95</quality_score>
   </metadata>
   <content>
-    <section level="1" page="3" id="exec-summary">
-      <heading>Executive Summary</heading>
-      <paragraph>We are committed to creating sustainable value...</paragraph>
+    <section level="1" page="1" id="introduction">
+      <heading>Introduction</heading>
+      <paragraph>This document provides an overview of the main topics...</paragraph>
     </section>
-    <section level="2" page="15" id="env-performance">
-      <heading>Environmental Performance</heading>
-      <paragraph>Our environmental initiatives focus on...</paragraph>
-      <table id="table_1" page="25">
-        <caption>Carbon Emissions by Region</caption>
+    <section level="2" page="8" id="main-content">
+      <heading>Main Content Section</heading>
+      <paragraph>The following information covers the key aspects...</paragraph>
+      <table id="table_1" page="12">
+        <caption>Sample Data Table</caption>
         <row type="header">
-          <cell>Region</cell>
-          <cell>2023</cell>
-          <cell>2024</cell>
-          <cell>Change</cell>
+          <cell>Category</cell>
+          <cell>Value A</cell>
+          <cell>Value B</cell>
+          <cell>Total</cell>
         </row>
         <row>
-          <cell>North America</cell>
-          <cell>1250</cell>
-          <cell>1180</cell>
-          <cell>-5.6%</cell>
+          <cell>Item 1</cell>
+          <cell>100</cell>
+          <cell>150</cell>
+          <cell>250</cell>
         </row>
       </table>
     </section>
@@ -366,47 +366,47 @@ When `enable_intelligence=true`, the response includes AI enhancement metadata:
 
 ```csv
 type,level,text,page,parent_id,word_count
-heading,1,"Executive Summary",3,,2
-paragraph,,"We are committed to creating sustainable value through innovative practices and responsible business operations.",3,exec-summary,16
-heading,2,"Environmental Performance",15,,2
-paragraph,,"Our environmental initiatives focus on reducing carbon emissions and increasing renewable energy usage.",15,env-performance,15
-table,,"Carbon Emissions by Region",25,env-performance,4
-table_row,,"Region,2023,2024,Change",25,table_1,4
-table_row,,"North America,1250,1180,-5.6%",25,table_1,4
+heading,1,"Introduction",1,,1
+paragraph,,"This document provides an overview of the main topics and key information.",1,introduction,12
+heading,2,"Main Content Section",8,,3
+paragraph,,"The following information covers the key aspects of the subject matter.",8,main-content,11
+table,,"Sample Data Table",12,main-content,3
+table_row,,"Category,Value A,Value B,Total",12,table_1,4
+table_row,,"Item 1,100,150,250",12,table_1,4
 ```
 
 ### YAML Output Structure
 
 ```yaml
 document_info:
-  title: "Sustainability Report FY 2023-24"
-  total_pages: 121
-  processing_time: "3.86s"
-  quality_score: 100
-  enhancement_strategy: "adaptive_structured"
+  title: "Sample Business Document"
+  total_pages: 25
+  processing_time: "2.4s"
+  quality_score: 95
+  enhancement_strategy: "adaptive_standard"
 
 structured_content:
-  total_elements: 217
-  headings: 95
-  paragraphs: 122
-  lists: 0
+  total_elements: 150
+  headings: 45
+  paragraphs: 80
+  lists: 25
   hierarchy:
-    h1: 12
-    h2: 34
-    h3: 49
+    h1: 5
+    h2: 15
+    h3: 25
 
 semantic_elements:
   - type: heading
     level: 1
-    text: "Executive Summary"
-    page: 3
-    id: "exec-summary"
+    text: "Introduction"
+    page: 1
+    id: "introduction"
   
   - type: paragraph
-    text: "We are committed to creating sustainable value..."
-    page: 3
-    word_count: 45
-    parent_id: "exec-summary"
+    text: "This document provides an overview of the main topics..."
+    page: 1
+    word_count: 32
+    parent_id: "introduction"
 ```
 
 ## 🔧 Integration Examples
@@ -442,7 +442,7 @@ async def convert_with_structured_output(file_path, formats=["markdown", "json"]
 
 # Usage
 markdown, structured_data = await convert_with_structured_output(
-    "report.pdf", 
+    "sample_document.pdf", 
     formats=["markdown", "json", "xml"]
 )
 
@@ -522,7 +522,7 @@ curl -X POST "http://localhost:8000/convert/batch" \
     "invalid_formats": ["invalid_format"],
     "valid_formats": ["markdown", "json", "xml", "csv", "yaml", "html"]
   },
-  "request_id": "req_123456"
+  "request_id": "req_sample123"
 }
 ```
 
@@ -591,15 +591,8 @@ CACHE_STRUCTURED_OUTPUT=true                  # Cache structured outputs
 - No content is stored permanently
 - All processing happens locally (when using local embeddings)
 
-## 📞 Support
-
-- 📧 Email: api-support@sutra-markdown.com
-- 📖 Full Documentation: [docs.sutra-markdown.com](https://docs.sutra-markdown.com)
-- 🐛 Issues: [GitHub Issues](https://github.com/nranjan2code/sutra-markdown/issues)
-- 💬 Discord: [Join our community](https://discord.gg/sutra)
-
 ---
 
 **API Version**: 2.1.0  
-**Last Updated**: January 2024  
+**Last Updated**: October 2025  
 **Status**: Production Ready ✅

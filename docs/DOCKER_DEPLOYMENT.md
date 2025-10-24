@@ -810,5 +810,3 @@ docker system prune -a
 ---
 
 **Ready to deploy! 🚀**
-
-For questions or issues, please open a GitHub issue or contact support.

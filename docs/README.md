@@ -132,7 +132,6 @@ See **[Migration Guide](MIGRATION_GUIDE.md)** for complete details.
 ## 🔗 External Resources
 
 - **GitHub Repository**: [sutra-markdown](https://github.com/nranjan2code/sutra-markdown)
-- **Issue Tracker**: [GitHub Issues](https://github.com/nranjan2code/sutra-markdown/issues)
 - **License**: [MIT License](../LICENSE)
 
 ---

@@ -87,7 +87,7 @@ enhanced_doc = await reconstructor.reconstruct_text_flow(document, patterns)
 
 ### **Real-World Testing**
 
-**Complex ESG Report (Wipro Sustainability Report)**:
+**Complex ESG Report (Corporate Sustainability Report)**:
 - **Pages**: 121 pages
 - **Quality Score**: **100.0/100** ✅
 - **Strategy**: `adaptive_structured`
