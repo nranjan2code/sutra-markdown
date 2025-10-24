@@ -2,12 +2,6 @@
 
 **"What if embeddings guided the EXTRACTION process itself, not just the routing decisions?"
 
-Sutra Markdown turns any document — PDF, DOCX, HTML — into a clean, semantically aligned format that AIs truly understand.
-Instead of throwing random chunks into embeddings, we use embedding-guided extraction to reconstruct documents the way a model would naturally interpret them.
-
-The result: drastically improved accuracy, lower compute cost, and consistent structure across all your AI pipelines. Think of it as the Rosetta Stone between human data and machine intelligence.
-
-
 
 🌐 Vision Statement — Sutra Markdown: AI-Native Understanding
 
