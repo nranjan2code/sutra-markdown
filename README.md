@@ -2,7 +2,26 @@
 
 **"What if embeddings guided the EXTRACTION process itself, not just the routing decisions?"
 
-Transform PDFs, DOCX, PPTX, and images into high-quality Markdown with revolutionary AI intelligence. Built with modern Python best practices, complete type safety, and enterprise-grade security.
+Sutra Markdown turns any document — PDF, DOCX, HTML — into a clean, semantically aligned format that AIs truly understand.
+Instead of throwing random chunks into embeddings, we use embedding-guided extraction to reconstruct documents the way a model would naturally interpret them.
+
+The result: drastically improved accuracy, lower compute cost, and consistent structure across all your AI pipelines. Think of it as the Rosetta Stone between human data and machine intelligence.
+
+
+
+🌐 Vision Statement — Sutra Markdown: AI-Native Understanding
+
+Sutra Markdown transforms unstructured data — PDFs, Word docs, slides, and web pages — into a structured, AI-native representation that language models and embedding systems truly understand.
+
+Instead of chunking raw text and hoping an embedding model can infer structure, Sutra asks:
+
+“How would an AI naturally read and think about this information?”
+
+It then uses embedding-guided extraction to rebuild each document in Markdown or JSON form that mirrors the semantic hierarchy — sections, lists, relationships, and context.
+
+The result is a clean, standardized format that makes downstream retrieval, reasoning, and RAG pipelines far more accurate, explainable, and cost-efficient.
+
+By aligning how humans write with how AIs comprehend, Sutra becomes the missing translation layer between the world’s messy documents and the machine’s semantic space.
 
 ## ⚡ Quick Start - Docker (Single Command)
 
